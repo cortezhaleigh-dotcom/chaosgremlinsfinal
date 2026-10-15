@@ -110,7 +110,7 @@ document.querySelectorAll('.category').forEach(card=>card.addEventListener('clic
 document.getElementById('backButton').addEventListener('click',()=>{detail.classList.remove('active');home.style.display='block';window.scrollTo({top:0,behavior:'smooth'})});
 const accountButton=document.getElementById('accountButton'),menu=document.getElementById('accountMenu');accountButton.addEventListener('click',()=>{const open=menu.classList.toggle('open');accountButton.setAttribute('aria-expanded',String(open))});document.addEventListener('click',e=>{if(!e.target.closest('.account')){menu.classList.remove('open');accountButton.setAttribute('aria-expanded','false')}});
 const toast=document.getElementById('toast');document.querySelectorAll('[data-account]').forEach(btn=>btn.addEventListener('click',()=>{toast.textContent=btn.dataset.account+' will be available after account features are connected.';toast.classList.add('show');menu.classList.remove('open');accountButton.setAttribute('aria-expanded','false');window.setTimeout(()=>toast.classList.remove('show'),2800)}));
-
+</script>
 <script type="module">
   import { createClient } from
     'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
@@ -122,7 +122,5 @@ const toast=document.getElementById('toast');document.querySelectorAll('[data-ac
 
   window.supabaseClient = supabase;
   console.log('Chaos Gremlins Supabase client ready!');
-</script>
-
 </script>
 </body></html>
